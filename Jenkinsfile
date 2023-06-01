@@ -19,7 +19,7 @@ pipeline {
 		stage('deploy to cluster') {
 			steps {
 				sh '''
-				sed -e 's,{{PASSWORD}}'${PASSWORD}',g;' mysql-creds.yaml | kubectl apply -f -
+				sed -e 's,{{PASSWORD}},'${PASSWORD}',g;' mysql-creds.yaml | kubectl apply -f -
 				kubectl apply -f nginx-config.yaml
 				kubectl apply -f db.yaml
 				kubectl apply -f trio-deployment.yaml
