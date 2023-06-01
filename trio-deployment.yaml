@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trio
+  labels:
+    app: trio
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 20%
+      maxUnavailable: 20%
+  replicas: 5
+  selector:
+    matchLabels:
+      app: trio
+  template:
+    metadata:
+      labels:
+        app: trio
+    spec:
+      containers:
+        - image: gcr.io/lbg-mea-11/trio-app:v2
+          name: trio
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-creds
+                  key: password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-app
+spec:
+  type: ClusterIP
+  selector:
+    app: trio
+  ports:
+    - port: 5000
+      protocol: TCP

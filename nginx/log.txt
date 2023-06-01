@@ -1,0 +1,19 @@
+2023-05-24 15:13:43+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.42-1.el7 started.
+2023-05-24 15:13:43+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2023-05-24 15:13:43+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.42-1.el7 started.
+2023-05-24 15:13:44+00:00 [Note] [Entrypoint]: Initializing database files
+2023-05-24 15:13:48+00:00 [Note] [Entrypoint]: Database files initialized
+2023-05-24 15:13:48+00:00 [Note] [Entrypoint]: Starting temporary server
+2023-05-24 15:13:48+00:00 [Note] [Entrypoint]: Waiting for server startup
+2023-05-24 15:13:49+00:00 [Note] [Entrypoint]: Temporary server started.
+'/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+2023-05-24 15:13:51+00:00 [Note] [Entrypoint]: Creating database flask-db
+
+2023-05-24 15:13:51+00:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/CreateTable.sql
+
+
+2023-05-24 15:13:52+00:00 [Note] [Entrypoint]: Stopping temporary server
+2023-05-24 15:13:54+00:00 [Note] [Entrypoint]: Temporary server stopped
+
+2023-05-24 15:13:54+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+
