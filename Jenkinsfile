@@ -24,6 +24,8 @@ pipeline {
 				kubectl apply -f db.yaml
 				kubectl apply -f trio-deployment.yaml
 				kubectl apply -f nginx-pod.yaml
+				sleep 60
+				kubectl describe svc nginx
 				'''
 			}
 		}
